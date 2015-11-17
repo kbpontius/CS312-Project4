@@ -10,10 +10,10 @@ namespace GeneticsLab
         /// <summary>
         /// Align only 5000 characters in each sequence.
         /// </summary>
-        private int MaxCharactersToAlign = 5000; 
+        private int MaxCharactersToAlign = 5000;
 
         /// <summary>
-        /// this is the function you implement.
+        /// This is the function you implement.
         /// </summary>
         /// <param name="sequenceA">the first sequence</param>
         /// <param name="sequenceB">the second sequence, may have length not equal to the length of the first seq.</param>
@@ -24,8 +24,27 @@ namespace GeneticsLab
         /// of the ResultTable</returns>
         public int Align(GeneSequence sequenceA, GeneSequence sequenceB, ResultTable resultTableSoFar, int rowInTable, int columnInTable)
         {
-            // a place holder computation.  You'll want to implement your code here. 
-            return (Math.Abs(sequenceA.Sequence.Length - sequenceB.Sequence.Length));             
+            if((rowInTable - columnInTable) >= 0)
+            {
+                return 0;
+            }
+
+            string trimmedA = TrimString(sequenceA.Sequence, MaxCharactersToAlign);
+            string trimmedB = TrimString(sequenceB.Sequence, MaxCharactersToAlign);
+
+            PathGrid pathGrid = new PathGrid(trimmedA, trimmedB, true);
+            return 0;
+        }
+
+        // HELPER METHOD
+        private string TrimString(string stringToTrim, int limit)
+        {
+            if(stringToTrim.Length <= limit)
+            {
+                return stringToTrim;
+            }
+
+            return stringToTrim.Substring(limit);
         }
     }
 }

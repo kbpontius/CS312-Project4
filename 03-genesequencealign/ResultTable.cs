@@ -38,6 +38,7 @@ namespace GeneticsLab
                     //cell.Value = "asdas";
                     row.Cells.Add(cell);
                 }
+
                 m_dataView.Rows.Add(row);
             }
         }
