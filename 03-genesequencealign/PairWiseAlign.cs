@@ -24,27 +24,13 @@ namespace GeneticsLab
         /// of the ResultTable</returns>
         public int Align(GeneSequence sequenceA, GeneSequence sequenceB, ResultTable resultTableSoFar, int rowInTable, int columnInTable)
         {
-            if((rowInTable - columnInTable) >= 0)
+            if((columnInTable - rowInTable) < 0)
             {
                 return 0;
             }
 
-            string trimmedA = TrimString(sequenceA.Sequence, MaxCharactersToAlign);
-            string trimmedB = TrimString(sequenceB.Sequence, MaxCharactersToAlign);
-
-            Grid grid = new Grid(trimmedA, trimmedB, true);
+            Grid grid = new Grid(sequenceA.Sequence, sequenceB.Sequence, true, MaxCharactersToAlign);
             return grid.CalculateScoreSolution();
-        }
-
-        // HELPER METHOD
-        private string TrimString(string stringToTrim, int limit)
-        {
-            if(stringToTrim.Length <= limit)
-            {
-                return stringToTrim;
-            }
-
-            return stringToTrim.Substring(0, limit);
         }
     }
 }

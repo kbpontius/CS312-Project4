@@ -81,7 +81,7 @@ namespace GeneticsLab
             {
                 for (int y = 0; y < NUMBER_OF_SEQUENCES; ++y)
                 {
-                    m_resultTable.SetCell(x, y, processor.Align(m_sequences[x], m_sequences[y],m_resultTable,x,y));
+                    m_resultTable.SetCell(x, y, processor.Align(m_sequences[x], m_sequences[y], m_resultTable, x, y));
                 }
             }
         }
@@ -91,10 +91,21 @@ namespace GeneticsLab
             statusMessage.Text = "Processing...";
             Stopwatch timer = new Stopwatch();
             timer.Start();
-                   fillMatrix();
+            fillMatrix();
             timer.Stop();
             statusMessage.Text = "Done.  Time taken: " + timer.Elapsed;
+        }
 
+        private void dataGridViewResults_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            statusMessage.Text = "Calculating Alignment...";
+
+            Console.WriteLine("ROW: " +  e.RowIndex + " - COL: " + e.ColumnIndex);
+            Grid extractionGrid = new Grid(m_sequences[e.RowIndex].Sequence, m_sequences[e.ColumnIndex].Sequence, true, 5000);
+            int score = extractionGrid.CalculateScoreSolution();
+
+            txtAlignment.Text = Convert.ToString(score);
+            statusMessage.Text = "Done.";
         }
     }
 }

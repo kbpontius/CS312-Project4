@@ -7,16 +7,15 @@ namespace GeneticsLab
 {
     class Grid
     {
-        public Grid(string topSequence, string leftSequence, bool isScoringAlgorithm)
+        public Grid(string topSequence, string leftSequence, bool isScoringAlgorithm, int MaxCharactersToAlign)
         {
-            this.leftSequence = leftSequence;
-            this.topSequence = topSequence;
+            this.topSequence= TrimString(topSequence, MaxCharactersToAlign);
+            this.leftSequence = TrimString(leftSequence, MaxCharactersToAlign);
 
             if (isScoringAlgorithm)
             {
                 scoreGrid = new List<List<int>>();
                 PopulateScoringPathGrid();
-                // PrintScoreGrid();
             }
             else
             {
@@ -186,6 +185,16 @@ namespace GeneticsLab
         private int GetMinCost(int first, int second, int third)
         {
             return Math.Min(first, Math.Min(second, third));
+        }
+
+        private string TrimString(string stringToTrim, int limit)
+        {
+            if (stringToTrim.Length <= limit)
+            {
+                return stringToTrim;
+            }
+
+            return stringToTrim.Substring(0, limit);
         }
 
         // MOVE COST METHODS
