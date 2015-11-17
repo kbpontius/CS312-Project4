@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="GeneticsLab">
+</Property><Property Name="Solution File" Value="C:\Users\Richard\Documents\CS312\GeneSequenceAlignment\GeneticsLab.sln">
+</Property><Property Name="User Options File" Value="C:\Users\Richard\Documents\CS312\GeneSequenceAlignment\GeneticsLab.suo">
+</Property><Property Name="Date" Value="Saturday, August 14, 2010">
+</Property><Property Name="Time" Value="17:57 PM">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="GeneticsLab.sln" Description="File successfully backed up as C:\Users\Richard\Documents\CS312\GeneSequenceAlignment\Backup\GeneticsLab.sln">
+</Event><Event ErrorLevel="0" Project="" Source="GeneticsLab.suo" Description="File successfully backed up as C:\Users\Richard\Documents\CS312\GeneSequenceAlignment\Backup\GeneticsLab.suo">
+</Event><Event ErrorLevel="0" Project="GeneticsLab" Source="03-genesequencealign\GeneticsLab.csproj" Description="Project file successfully backed up as C:\Users\Richard\Documents\CS312\GeneSequenceAlignment\Backup\03-genesequencealign\GeneticsLab.csproj">
+</Event><Event ErrorLevel="0" Project="GeneticsLab" Source="03-genesequencealign\GeneticsLab.csproj.user" Description="Project user file successfully backed up as C:\Users\Richard\Documents\CS312\GeneSequenceAlignment\Backup\03-genesequencealign\GeneticsLab.csproj.user">
+</Event><Event ErrorLevel="0" Project="GeneticsLab" Source="03-genesequencealign\DatabaseController.cs" Description="File successfully backed up as C:\Users\Richard\Documents\CS312\GeneSequenceAlignment\Backup\03-genesequencealign\DatabaseController.cs">
+</Event><Event ErrorLevel="0" Project="GeneticsLab" Source="03-genesequencealign\GeneSequence.cs" Description="File successfully backed up as C:\Users\Richard\Documents\CS312\GeneSequenceAlignment\Backup\03-genesequencealign\GeneSequence.cs">
+</Event><Event ErrorLevel="0" Project="GeneticsLab" Source="03-genesequencealign\MainForm.cs" Description="File successfully backed up as C:\Users\Richard\Documents\CS312\GeneSequenceAlignment\Backup\03-genesequencealign\MainForm.cs">
+</Event><Event ErrorLevel="0" Project="GeneticsLab" Source="03-genesequencealign\MainForm.Designer.cs" Description="File successfully backed up as C:\Users\Richard\Documents\CS312\GeneSequenceAlignment\Backup\03-genesequencealign\MainForm.Designer.cs">
+</Event><Event ErrorLevel="0" Project="GeneticsLab" Source="03-genesequencealign\PairWiseAlign.cs" Description="File successfully backed up as C:\Users\Richard\Documents\CS312\GeneSequenceAlignment\Backup\03-genesequencealign\PairWiseAlign.cs">
+</Event><Event ErrorLevel="0" Project="GeneticsLab" Source="03-genesequencealign\Program.cs" Description="File successfully backed up as C:\Users\Richard\Documents\CS312\GeneSequenceAlignment\Backup\03-genesequencealign\Program.cs">
+</Event><Event ErrorLevel="0" Project="GeneticsLab" Source="03-genesequencealign\Properties\AssemblyInfo.cs" Description="File successfully backed up as C:\Users\Richard\Documents\CS312\GeneSequenceAlignment\Backup\03-genesequencealign\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="GeneticsLab" Source="03-genesequencealign\Properties\Resources.Designer.cs" Description="File successfully backed up as C:\Users\Richard\Documents\CS312\GeneSequenceAlignment\Backup\03-genesequencealign\Properties\Resources.Designer.cs">
+</Event><Event ErrorLevel="0" Project="GeneticsLab" Source="03-genesequencealign\Properties\Settings.Designer.cs" Description="File successfully backed up as C:\Users\Richard\Documents\CS312\GeneSequenceAlignment\Backup\03-genesequencealign\Properties\Settings.Designer.cs">
+</Event><Event ErrorLevel="0" Project="GeneticsLab" Source="03-genesequencealign\ResultTable.cs" Description="File successfully backed up as C:\Users\Richard\Documents\CS312\GeneSequenceAlignment\Backup\03-genesequencealign\ResultTable.cs">
+</Event><Event ErrorLevel="0" Project="GeneticsLab" Source="03-genesequencealign\Properties\Settings.settings" Description="File successfully backed up as C:\Users\Richard\Documents\CS312\GeneSequenceAlignment\Backup\03-genesequencealign\Properties\Settings.settings">
+</Event><Event ErrorLevel="0" Project="GeneticsLab" Source="03-genesequencealign\MainForm.resx" Description="File successfully backed up as C:\Users\Richard\Documents\CS312\GeneSequenceAlignment\Backup\03-genesequencealign\MainForm.resx">
+</Event><Event ErrorLevel="0" Project="GeneticsLab" Source="03-genesequencealign\Properties\Resources.resx" Description="File successfully backed up as C:\Users\Richard\Documents\CS312\GeneSequenceAlignment\Backup\03-genesequencealign\Properties\Resources.resx">
+</Event><Event ErrorLevel="0" Project="GeneticsLab" Source="03-genesequencealign\GeneticsLab.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="GeneticsLab" Source="03-genesequencealign\GeneticsLab.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="GeneticsLab.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="GeneticsLab.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="GeneticsLab" Source="03-genesequencealign\GeneticsLab.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

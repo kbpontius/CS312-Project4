@@ -1,0 +1,37 @@
+C:\Users\ringger\Documents\BYU\Winter2010-312\Projects\Project5-GeneSequenceAlignment\GeneSequenceAlignment\03-genesequencealign\obj\Debug\GeneticsLab.exe
+C:\Users\ringger\Documents\BYU\Winter2010-312\Projects\Project5-GeneSequenceAlignment\GeneSequenceAlignment\03-genesequencealign\obj\Debug\GeneticsLab.pdb
+C:\Users\Richard\Documents\CS312\GeneSequenceAlignment\03-genesequencealign\obj\Debug\GeneticsLab.exe
+C:\Users\Richard\Documents\CS312\GeneSequenceAlignment\03-genesequencealign\obj\Debug\GeneticsLab.pdb
+C:\Users\Richard\Documents\CS312\GeneSequenceAlignment\03-genesequencealign\bin\Debug\GeneticsLab.exe
+C:\Users\Richard\Documents\CS312\GeneSequenceAlignment\03-genesequencealign\bin\Debug\GeneticsLab.pdb
+C:\Users\Richard\Documents\CS312\GeneSequenceAlignment\03-genesequencealign\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Richard\Documents\CS312\GeneSequenceAlignment\03-genesequencealign\obj\Debug\GeneticsLab.MainForm.resources
+C:\Users\Richard\Documents\CS312\GeneSequenceAlignment\03-genesequencealign\obj\Debug\GeneticsLab.Properties.Resources.resources
+C:\Users\Richard\Documents\CS312\GeneSequenceAlignment\03-genesequencealign\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\Richard\Documents\CS312\GeneSequenceAlignment\03-genesequencealign\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\Richard\Desktop\CS312 TA\GeneSequenceAlignment\03-genesequencealign\obj\Debug\GeneticsLab.exe
+C:\Users\Richard\Desktop\CS312 TA\GeneSequenceAlignment\03-genesequencealign\obj\Debug\GeneticsLab.pdb
+C:\Users\Richard\Desktop\CS312 TA\GeneSequenceAlignment\03-genesequencealign\bin\Debug\GeneticsLab.exe
+C:\Users\Richard\Desktop\CS312 TA\GeneSequenceAlignment\03-genesequencealign\bin\Debug\GeneticsLab.pdb
+C:\Users\Richard\Desktop\CS312 TA\GeneSequenceAlignment\03-genesequencealign\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Richard\Desktop\CS312 TA\GeneSequenceAlignment\03-genesequencealign\obj\Debug\GeneticsLab.MainForm.resources
+C:\Users\Richard\Desktop\CS312 TA\GeneSequenceAlignment\03-genesequencealign\obj\Debug\GeneticsLab.Properties.Resources.resources
+C:\Users\Richard\Desktop\CS312 TA\GeneSequenceAlignment\03-genesequencealign\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\Richard\Desktop\CS312 TA\GeneSequenceAlignment\03-genesequencealign\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\Richard\Desktop\312 projects\GeneSequenceAlignment\GeneSequenceAlignment\03-genesequencealign\obj\Debug\GeneticsLab.exe
+C:\Users\Richard\Desktop\312 projects\GeneSequenceAlignment\GeneSequenceAlignment\03-genesequencealign\obj\Debug\GeneticsLab.pdb
+C:\Users\Richard\Desktop\312 projects\GeneSequenceAlignment\GeneSequenceAlignment\03-genesequencealign\bin\Debug\GeneticsLab.exe
+C:\Users\Richard\Desktop\312 projects\GeneSequenceAlignment\GeneSequenceAlignment\03-genesequencealign\bin\Debug\GeneticsLab.pdb
+C:\Users\Richard\Desktop\312 projects\GeneSequenceAlignment\GeneSequenceAlignment\03-genesequencealign\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Richard\Desktop\312 projects\GeneSequenceAlignment\GeneSequenceAlignment\03-genesequencealign\obj\Debug\GeneticsLab.MainForm.resources
+C:\Users\Richard\Desktop\312 projects\GeneSequenceAlignment\GeneSequenceAlignment\03-genesequencealign\obj\Debug\GeneticsLab.Properties.Resources.resources
+C:\Users\Richard\Desktop\312 projects\GeneSequenceAlignment\GeneSequenceAlignment\03-genesequencealign\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\Richard\Desktop\312 projects\GeneSequenceAlignment\GeneSequenceAlignment\03-genesequencealign\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\Kyle\Documents\BYU\CS312\Project 4 - GeneSequenceAlignment\03-genesequencealign\obj\Debug\GeneticsLab.exe
+C:\Users\Kyle\Documents\BYU\CS312\Project 4 - GeneSequenceAlignment\03-genesequencealign\obj\Debug\GeneticsLab.pdb
+C:\Users\Kyle\Documents\BYU\CS312\Project 4 - GeneSequenceAlignment\03-genesequencealign\bin\Debug\GeneticsLab.exe
+C:\Users\Kyle\Documents\BYU\CS312\Project 4 - GeneSequenceAlignment\03-genesequencealign\bin\Debug\GeneticsLab.pdb
+C:\Users\Kyle\Documents\BYU\CS312\Project 4 - GeneSequenceAlignment\03-genesequencealign\obj\Debug\GeneticsLab.csprojResolveAssemblyReference.cache
+C:\Users\Kyle\Documents\BYU\CS312\Project 4 - GeneSequenceAlignment\03-genesequencealign\obj\Debug\GeneticsLab.MainForm.resources
+C:\Users\Kyle\Documents\BYU\CS312\Project 4 - GeneSequenceAlignment\03-genesequencealign\obj\Debug\GeneticsLab.Properties.Resources.resources
+C:\Users\Kyle\Documents\BYU\CS312\Project 4 - GeneSequenceAlignment\03-genesequencealign\obj\Debug\GeneticsLab.csproj.GenerateResource.Cache
