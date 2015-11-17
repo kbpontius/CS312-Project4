@@ -32,8 +32,8 @@ namespace GeneticsLab
             string trimmedA = TrimString(sequenceA.Sequence, MaxCharactersToAlign);
             string trimmedB = TrimString(sequenceB.Sequence, MaxCharactersToAlign);
 
-            PathGrid pathGrid = new PathGrid(trimmedA, trimmedB, true);
-            return 0;
+            Grid grid = new Grid(trimmedA, trimmedB, true);
+            return grid.CalculateScoreSolution();
         }
 
         // HELPER METHOD
@@ -44,7 +44,7 @@ namespace GeneticsLab
                 return stringToTrim;
             }
 
-            return stringToTrim.Substring(limit);
+            return stringToTrim.Substring(0, limit);
         }
     }
 }

@@ -5,18 +5,18 @@ using System.Text;
 
 namespace GeneticsLab
 {
-    class PathGrid
+    class Grid
     {
-        public PathGrid(string topSequence, string leftSequence, bool isScoringAlgorithm)
+        public Grid(string topSequence, string leftSequence, bool isScoringAlgorithm)
         {
             this.leftSequence = leftSequence;
             this.topSequence = topSequence;
-            
-            if(isScoringAlgorithm)
+
+            if (isScoringAlgorithm)
             {
                 scoreGrid = new List<List<int>>();
                 PopulateScoringPathGrid();
-                PrintScoreGrid();
+                // PrintScoreGrid();
             }
             else
             {
@@ -25,7 +25,7 @@ namespace GeneticsLab
             }
         }
 
-        private PathGrid() { }
+        private Grid() { }
 
         private enum Direction
         {
@@ -49,12 +49,12 @@ namespace GeneticsLab
         private const int CONST_INDEL_COST = 5;
         private const int CONST_MISMATCH_COST = 1;
         private const int CONST_MATCH_COST = -3;
-        
+
         // PRIVATE METHODS
 
         private void PopulateExtractionPathGrid()
         {
-            for(int i = 0; i <= leftSequence.Length; i++)
+            for (int i = 0; i <= leftSequence.Length; i++)
             {
                 pathGrid.Add(new List<DirectionCost>(topSequence.Length + 1));
 
@@ -78,20 +78,19 @@ namespace GeneticsLab
         {
             scoreGrid.Add(new List<int>());
             scoreGrid.Add(new List<int>());
+            scoreGrid[1].Add(5);
 
             for (int j = 0; j <= topSequence.Length; j++)
             {
                 scoreGrid[0].Add(j * 5);
             }
-
-            scoreGrid[1].Add(5);
         }
 
         private void PrintPathGrid()
         {
-            for(int i = 0; i < pathGrid.Count; i++)
+            for (int i = 0; i < pathGrid.Count; i++)
             {
-                for(int j = 0; j < pathGrid[i].Count; j++)
+                for (int j = 0; j < pathGrid[i].Count; j++)
                 {
                     Console.Write(pathGrid[i][j].pathCost + "\t");
                 }
@@ -102,9 +101,9 @@ namespace GeneticsLab
 
         private void PrintScoreGrid()
         {
-            for(int i = 0; i < scoreGrid.Count; i++)
+            for (int i = 0; i < scoreGrid.Count; i++)
             {
-                for(int j = 0; j < scoreGrid[i].Count; j++)
+                for (int j = 0; j < scoreGrid[i].Count; j++)
                 {
                     Console.Write(scoreGrid[i][j] + "\t");
                 }
@@ -118,10 +117,10 @@ namespace GeneticsLab
         public int CalculateExtractionSolution()
         {
             // Iterate over rows
-            for(int i = 1; i < pathGrid.Count; i++)
+            for (int i = 1; i < pathGrid.Count; i++)
             {
                 // Iterate over columns
-                for(int j = 1; j < pathGrid[i].Count; j++)
+                for (int j = 1; j < pathGrid[i].Count; j++)
                 {
                     DirectionCost newDirCost = GetMoveDirCost(i, j);
                     pathGrid[i][j] = newDirCost;
@@ -131,6 +130,27 @@ namespace GeneticsLab
             // PrintPathGrid();
 
             return pathGrid[leftSequence.Length][topSequence.Length].pathCost;
+        }
+
+        public int CalculateScoreSolution()
+        {
+            int currentRow = 1;
+
+            while (currentRow <= leftSequence.Length)
+            {
+                for (int i = 1; i <= topSequence.Length; i++)
+                {
+                    scoreGrid[1].Add(GetMinCost(ScoreRight(1, i), ScoreDown(1, i), ScoreDiag(1, i, leftSequence[currentRow - 1] == topSequence[i - 1])));
+                }
+
+                currentRow++;
+
+                scoreGrid[0] = scoreGrid[1];
+                scoreGrid[1] = new List<int>(topSequence.Length + 1);
+                scoreGrid[1].Add(currentRow * 5);
+            }
+
+            return scoreGrid[0][topSequence.Length];
         }
 
         // HELPER METHODS
@@ -144,15 +164,15 @@ namespace GeneticsLab
 
             DirectionCost right = new DirectionCost();
             right.direction = Direction.Right;
-            right.pathCost = MoveRight(currentRow, currentCol);
+            right.pathCost = PathRight(currentRow, currentCol);
 
             DirectionCost down = new DirectionCost();
             down.direction = Direction.Down;
-            down.pathCost = MoveDown(currentRow, currentCol);
+            down.pathCost = PathDown(currentRow, currentCol);
 
             DirectionCost diag = new DirectionCost();
             diag.direction = Direction.Diag;
-            diag.pathCost = MoveDiag(currentRow, currentCol, isMatch);
+            diag.pathCost = PathDiag(currentRow, currentCol, isMatch);
 
             return GetMinDirCost(right, down, diag);
         }
@@ -170,19 +190,34 @@ namespace GeneticsLab
 
         // MOVE COST METHODS
 
-        private int MoveRight(int currentRow, int currentCol)
+        private int PathRight(int currentRow, int currentCol)
         {
             return pathGrid[currentRow][currentCol - 1].pathCost + CONST_INDEL_COST;
         }
 
-        private int MoveDown(int currentRow, int currentCol)
+        private int ScoreRight(int currentRow, int currentCol)
+        {
+            return scoreGrid[currentRow][currentCol - 1] + CONST_INDEL_COST;
+        }
+
+        private int PathDown(int currentRow, int currentCol)
         {
             return pathGrid[currentRow - 1][currentCol].pathCost + CONST_INDEL_COST;
         }
 
-        private int MoveDiag(int currentRow, int currentCol, bool isMatch)
+        private int ScoreDown(int currentRow, int currentCol)
+        {
+            return scoreGrid[currentRow - 1][currentCol] + CONST_INDEL_COST;
+        }
+
+        private int PathDiag(int currentRow, int currentCol, bool isMatch)
         {
             return pathGrid[currentRow - 1][currentCol - 1].pathCost + (isMatch ? CONST_MATCH_COST : CONST_MISMATCH_COST);
+        }
+
+        private int ScoreDiag(int currentRow, int currentCol, bool isMatch)
+        {
+            return scoreGrid[currentRow - 1][currentCol - 1] + (isMatch ? CONST_MATCH_COST : CONST_MISMATCH_COST);
         }
     }
 }
