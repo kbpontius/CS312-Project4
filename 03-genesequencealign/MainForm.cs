@@ -2,7 +2,7 @@ using System;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.IO;
-
+using System.Text;
 
 namespace GeneticsLab
 {
@@ -99,13 +99,45 @@ namespace GeneticsLab
         private void dataGridViewResults_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             statusMessage.Text = "Calculating Alignment...";
+            txtAlignment.Text = "";
+            this.Refresh();
 
-            Console.WriteLine("ROW: " +  e.RowIndex + " - COL: " + e.ColumnIndex);
-            Grid extractionGrid = new Grid(m_sequences[e.RowIndex].Sequence, m_sequences[e.ColumnIndex].Sequence, true, 5000);
-            int score = extractionGrid.CalculateScoreSolution();
+            Grid extractionGrid = new Grid(m_sequences[e.RowIndex].Sequence, m_sequences[e.ColumnIndex].Sequence, false, 5000);
+            int score = extractionGrid.CalculateExtractionSolution();
+            Tuple<string, string> sequences = extractionGrid.ExtractPath();
 
-            txtAlignment.Text = Convert.ToString(score);
+            string trimmedNewTopSequence = TrimAlignment(sequences.Item1);
+            string trimmedNewLeftSequence = TrimAlignment(sequences.Item2);
+
+            StringBuilder builder = new StringBuilder();
+            builder.Append(FormatSequence(trimmedNewTopSequence));
+            builder.Append(FormatSequence(trimmedNewLeftSequence));
+            txtAlignment.Text = builder.ToString();
+
             statusMessage.Text = "Done.";
+        }
+
+        private string FormatSequence(string stringToFormat)
+        {
+            StringBuilder formattedStrings = new StringBuilder();
+
+            foreach(char letter in stringToFormat)
+            {
+                formattedStrings.Append(Char.ToUpper(letter));
+            }
+
+            formattedStrings.Append("\r\n");
+            return formattedStrings.ToString();
+        }
+
+        private string TrimAlignment(string stringToTrim)
+        {
+            if(stringToTrim.Length <= 100)
+            {
+                return stringToTrim;
+            }
+
+            return stringToTrim.Substring(0, 100);
         }
     }
 }

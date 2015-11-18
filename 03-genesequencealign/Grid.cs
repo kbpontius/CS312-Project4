@@ -5,7 +5,7 @@ using System.Text;
 
 namespace GeneticsLab
 {
-    class Grid
+    public class Grid
     {
         public Grid(string topSequence, string leftSequence, bool isScoringAlgorithm, int MaxCharactersToAlign)
         {
@@ -26,7 +26,7 @@ namespace GeneticsLab
 
         private Grid() { }
 
-        private enum Direction
+        public enum Direction
         {
             None,
             Right,
@@ -34,10 +34,10 @@ namespace GeneticsLab
             Diag
         }
 
-        private struct DirectionCost
+        public struct DirectionCost
         {
-            internal Direction direction;
-            internal int pathCost;
+            public Direction direction;
+            public int pathCost;
         }
 
         private List<List<DirectionCost>> pathGrid;
@@ -50,6 +50,53 @@ namespace GeneticsLab
         private const int CONST_MATCH_COST = -3;
 
         // PRIVATE METHODS
+
+        public Tuple<string, string> ExtractPath()
+        {
+            StringBuilder newTopSequence = new StringBuilder();
+            StringBuilder newLeftSequence = new StringBuilder();
+
+            int currentRow = leftSequence.Length;
+            int currentCol = topSequence.Length;
+
+            Direction currentDirection = pathGrid[currentRow][currentCol].direction;
+
+            int iterations = 0;
+
+            while (currentDirection != Direction.None && currentCol > 0 && currentRow > 0)
+            {
+                iterations++;
+                currentDirection = pathGrid[currentRow][currentCol].direction;
+
+                switch (currentDirection)
+                {
+                    case Direction.Down:
+                        newLeftSequence.Insert(0, leftSequence[currentRow - 1]);
+                        newTopSequence.Insert(0, "-");
+
+                        currentRow -= 1;
+                        break;
+                    case Direction.Right:
+                        newLeftSequence.Insert(0, "-");
+                        newTopSequence.Insert(0, topSequence[currentCol - 1]);
+
+                        currentCol -= 1;
+                        break;
+                    case Direction.Diag:
+                        newLeftSequence.Insert(0, leftSequence[currentRow - 1]);
+                        newTopSequence.Insert(0, topSequence[currentCol - 1]);
+
+                        currentCol -= 1;
+                        currentRow -= 1;
+                        break;
+                    case Direction.None:
+                        Console.WriteLine("Reached end of path.");
+                        break;
+                }
+            }
+
+            return Tuple.Create(newTopSequence.ToString(), newLeftSequence.ToString());
+        }
 
         private void PopulateExtractionPathGrid()
         {
@@ -125,9 +172,7 @@ namespace GeneticsLab
                     pathGrid[i][j] = newDirCost;
                 }
             }
-
-            // PrintPathGrid();
-
+            
             return pathGrid[leftSequence.Length][topSequence.Length].pathCost;
         }
 

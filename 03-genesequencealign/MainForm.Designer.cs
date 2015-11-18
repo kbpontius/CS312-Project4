@@ -93,9 +93,11 @@ namespace GeneticsLab
             // 
             // txtAlignment
             // 
+            this.txtAlignment.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAlignment.Location = new System.Drawing.Point(12, 447);
             this.txtAlignment.Multiline = true;
             this.txtAlignment.Name = "txtAlignment";
+            this.txtAlignment.ReadOnly = true;
             this.txtAlignment.Size = new System.Drawing.Size(855, 44);
             this.txtAlignment.TabIndex = 3;
             // 
