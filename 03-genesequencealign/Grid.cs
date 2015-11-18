@@ -56,14 +56,14 @@ namespace GeneticsLab
             StringBuilder newTopSequence = new StringBuilder();
             StringBuilder newLeftSequence = new StringBuilder();
 
-            int currentRow = leftSequence.Length;
-            int currentCol = topSequence.Length;
+            int currentRow = leftSequence.Length - 1;
+            int currentCol = topSequence.Length - 1;
 
             Direction currentDirection = pathGrid[currentRow][currentCol].direction;
 
             int iterations = 0;
 
-            while (currentDirection != Direction.None && currentCol > 0 && currentRow > 0)
+            while (currentDirection != Direction.None)
             {
                 iterations++;
                 currentDirection = pathGrid[currentRow][currentCol].direction;
@@ -71,26 +71,28 @@ namespace GeneticsLab
                 switch (currentDirection)
                 {
                     case Direction.Down:
-                        newLeftSequence.Insert(0, leftSequence[currentRow - 1]);
+                        newLeftSequence.Insert(0, leftSequence[currentRow]);
                         newTopSequence.Insert(0, "-");
 
                         currentRow -= 1;
                         break;
                     case Direction.Right:
                         newLeftSequence.Insert(0, "-");
-                        newTopSequence.Insert(0, topSequence[currentCol - 1]);
+                        newTopSequence.Insert(0, topSequence[currentCol]);
 
                         currentCol -= 1;
                         break;
                     case Direction.Diag:
-                        newLeftSequence.Insert(0, leftSequence[currentRow - 1]);
-                        newTopSequence.Insert(0, topSequence[currentCol - 1]);
+                        newLeftSequence.Insert(0, leftSequence[currentRow]);
+                        newTopSequence.Insert(0, topSequence[currentCol]);
 
                         currentCol -= 1;
                         currentRow -= 1;
                         break;
                     case Direction.None:
-                        Console.WriteLine("Reached end of path.");
+                        newLeftSequence.Insert(0, leftSequence[currentRow]);
+                        newTopSequence.Insert(0, topSequence[currentCol]);
+
                         break;
                 }
             }
@@ -107,7 +109,16 @@ namespace GeneticsLab
                 DirectionCost downDirCost = new DirectionCost();
 
                 downDirCost.pathCost = i * 5;
-                downDirCost.direction = Direction.Down;
+                
+                if(i != 0)
+                {
+                    downDirCost.direction = Direction.Down;
+                }
+                else
+                {
+                    downDirCost.direction = Direction.None;
+                }
+
                 pathGrid[i].Add(downDirCost);
 
                 for (int j = 1; j <= topSequence.Length; j++)
